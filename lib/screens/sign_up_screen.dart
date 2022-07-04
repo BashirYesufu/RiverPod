@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:river_pod/components/riverpod_textfield.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -9,7 +10,13 @@ class SignUpScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      body: Column()
+      body: Column(
+        children: [
+          SizedBox(height: 40,),
+          RiverPodTextField(label: 'Email'),
+          RiverPodTextField(label: 'Password')
+        ],
+      )
     );
   }
 }

@@ -9,6 +9,7 @@ class RiverPodTextField extends StatefulWidget {
   final Color borderColor;
   final int? maxLength;
   final TextInputType? keyboard;
+  final Function(String)? onChanged;
 
   const RiverPodTextField({
     this.controller,
@@ -19,6 +20,7 @@ class RiverPodTextField extends StatefulWidget {
     this.maxLength,
     this.borderColor = Colors.blue,
     this.keyboard = TextInputType.text,
+    this.onChanged,
     Key? key,
   }) : super(key: key);
 
@@ -40,17 +42,7 @@ class _RiverPodTextFieldState extends State<RiverPodTextField> {
         onTap: widget.onTap,
         keyboardType: widget.keyboard,
         readOnly: widget.readOnly,
-        onChanged: (_){
-          setState(() {
-            int? length = 0;
-            length = widget.controller?.text.length;
-            if (length == 0) {
-              _hasText = false;
-            } else {
-              _hasText = true;
-            }
-          });
-        },
+        onChanged: widget.onChanged,
         controller: widget.controller,
         cursorColor: Colors.black,
         decoration: InputDecoration(

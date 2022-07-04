@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:river_pod/components/riverpod_button.dart';
 import 'package:river_pod/components/riverpod_textfield.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -14,7 +15,12 @@ class SignUpScreen extends StatelessWidget {
         children: [
           SizedBox(height: 40,),
           RiverPodTextField(label: 'Email'),
-          RiverPodTextField(label: 'Password')
+          RiverPodTextField(label: 'Password'),
+          RiverPodButton(
+            onPressed: (){
+
+            },
+          ),
         ],
       )
     );

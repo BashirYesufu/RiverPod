@@ -30,8 +30,7 @@ class SignUpScreen extends ConsumerWidget {
             ),
             RiverPodButton(
             onPressed: (){
-              print(user.password);
-              if (user.email.isNotEmpty || user.email.contains('@')){
+              if (user.email.isNotEmpty && user.email.contains('@')){
                 if (user.password.length > 5){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                 } else {
